@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Reading List App</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/app.js"></script>
+
+  </head>
+  <body>
+    <form id="new-item-form">
+      <div id="form-wrapper">
+        <div class="form-item">
+          <label for="title" class="primary">Manufacturer</label>
+          <input type="text" id="manufacturer" required/>
+        </div>
+
+        <div class="form-item">
+          <label for="author" class="primary">Model</label>
+          <input type="text" id="model" required/>
+        </div>
+
+        <div class="form-item">
+          <label for="category" class="primary">Category</label>
+          <select id="category">
+            <option value="" disabled selected></option>
+            <option value="LMP1">LMP1</option>
+            <option value="LMP2">LMP2</option>
+            <option value="LMGTEPro">LMGTE Pro</option>
+            <option value="LMGTEAm">LMGTE AM</option>
+          </select>
+        </div>
+      </div>
+      <input type="submit" value="save"/>
+    </form>
+
+    <h1>Race List</h1>
+    <div id="reading-list"></div>
+  </body>
+</html>
