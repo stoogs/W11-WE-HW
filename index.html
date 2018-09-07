@@ -15,7 +15,8 @@
           <input type="text" id="manufacturer" required/>
         </div>
 
-        <div class="form-item">
+        <div 
+        class="form-item">
           <label for="author" class="primary">Model</label>
           <input type="text" id="model" required/>
         </div>
@@ -26,15 +27,18 @@
             <option value="" disabled selected></option>
             <option value="LMP1">LMP1</option>
             <option value="LMP2">LMP2</option>
-            <option value="LMGTEPro">LMGTE Pro</option>
-            <option value="LMGTEAm">LMGTE AM</option>
+            <option value="LMGTE_Pro">LMGTE Pro</option>
+            <option value="LMGTE_Am">LMGTE AM</option>
           </select>
         </div>
       </div>
       <input type="submit" value="save"/>
     </form>
+    <div class ="delete"> 
+      <button id="delete-all">DELETE ALL</button>
+    </div>
 
-    <h1>Race List</h1>
-    <div id="reading-list"></div>
+    <h1>Car List</h1>
+    <div id="car-list"></div>
   </body>
 </html>
