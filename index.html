@@ -5,19 +5,20 @@
     <title>Reading List App</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="js/app.js"></script>
-
   </head>
+
   <body>
     <form id="new-item-form">
+
       <div id="form-wrapper">
+
         <div class="form-item">
-          <label for="title" class="primary">Manufacturer</label>
+          <label for="manufacturer" class="primary">Manufacturer</label>
           <input type="text" id="manufacturer" required/>
         </div>
 
-        <div 
-        class="form-item">
-          <label for="author" class="primary">Model</label>
+        <div class="form-item">
+          <label for="model" class="primary">Model</label>
           <input type="text" id="model" required/>
         </div>
 
@@ -31,14 +32,26 @@
             <option value="LMGTE_Am">LMGTE AM</option>
           </select>
         </div>
+
       </div>
+
       <input type="submit" value="save"/>
+
     </form>
-    <div class ="delete"> 
+
+    <div class ="delete">
       <button id="delete-all">DELETE ALL</button>
     </div>
 
+    <div class ="sort">
+      <button id="sort-all">SORT ALL</button>
+    </div>
+
     <h1>Car List</h1>
-    <div id="car-list"></div>
+      <div id="car-list">
+      <!--CAR LIST WILL GO HERE-->
+    </div>
+
   </body>
+
 </html>

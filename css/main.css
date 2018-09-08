@@ -1,6 +1,10 @@
 body {
   background-image: url("bg.jpg");
-  background-size: 100%;
+  background-size: auto;
   font-family: Palatino;
   color: wheat; 
+}
+
+.form-item {
+
 }
