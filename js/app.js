@@ -38,30 +38,29 @@ const createCarListItem = function(form){
   category.textContent = form.category.value;
   carListItem.appendChild(category);
 
-  const bhp = document.createElement('h2');
-  let randBhp = Math.floor((Math.random() * 60) + 950);
+  const bhpDocument = document.createElement('h2');
 
   if (form.category.value == "LMP1" ){
-      bhp.textContent = `${randBhp} BHP - 1000 MAX`;
-      if (randBhp > 1000 ? bhp.textContent +=  ' **ILLEGAL**' : bhp.textContent +=  ' - PASSED' );
-
+      // [lower, upper] limit
+      let limitsBhp = [950,980];
+      carBhp = changeColorPassFail(bhpDocument, limitsBhp);
+      bhpDocument.textContent = `${carBhp} BHP - ${limitsBhp[1]} MAX`;
   } else if (form.category.value == "LMP2") {
-      randBhp -= 200;
-      bhp.textContent = `${randBhp} BHP - 800 MAX`;
-      if (randBhp > 800 ? bhp.textContent +=  ' **ILLEGAL**' : bhp.textContent +=  ' - PASSED' );
+      let limitsBhp = [850,880];
+      carBhp = changeColorPassFail(bhpDocument, limitsBhp);
+      bhpDocument.textContent = `${carBhp} BHP - ${limitsBhp[1]} MAX`;
   } else if (form.category.value == "LMGTE_Pro" ) {
-      randBhp -= 400;
-      bhp.textContent = `${randBhp} BHP - 600 MAX`;
-      if (randBhp > 600 ? bhp.textContent +=  ' **ILLEGAL**' : bhp.textContent +=  ' - PASSED' );
+      let limitsBhp = [650,680];
+      carBhp = changeColorPassFail(bhpDocument, limitsBhp);
+      bhpDocument.textContent = `${carBhp} BHP - ${limitsBhp[1]} MAX`;
   } else if (form.category.value == "LMGTE_Am" ) {
-      randBhp -= 450;
-      bhp.textContent = `${randBhp} BHP - 550 MAX`;
-      if (randBhp > 600 ? bhp.textContent +=  ' **ILLEGAL**' : bhp.textContent +=  ' - PASSED' );
+      let limitsBhp = [620,650];
+      carBhp = changeColorPassFail(bhpDocument, limitsBhp);
+      bhpDocument.textContent = `${carBhp} BHP - ${limitsBhp[1]} MAX`;
   }
 
-    console.log(randBhp);
-  //TODO get all values of document bhp and average out SOF. Apply this to each cars BOP Change.
-  carListItem.appendChild(bhp);
+  //TODO get all values of document bhpDocument and average out SOF. Apply this to each cars BOP Change.
+  carListItem.appendChild(bhpDocument);
 
   return carListItem;
 };
@@ -78,6 +77,16 @@ const handleDeleteAllClick = function (event) {
 
 const handleSortAllClick = function (event) {
     const carList = document.querySelector('#car-list');
-    console.dir();
 };
 
+const changeColorPassFail = function(bhpDocument, limitsBhp){
+    let carBhp = Math.floor((Math.random() * 50) + limitsBhp[0]);
+    if (carBhp > limitsBhp[1]) {
+        bhpDocument.style.color = 'red';
+        bhpDocument.textContent +=  ' **ILLEGAL**';
+    } else {
+        bhpDocument.style.color = 'green';
+        bhpDocument.textContent +=  ' - PASSED';
+    }
+    return carBhp;
+};
